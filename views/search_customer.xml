@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="search_customer_from_view">
+        <field name="name">search.customer.from.view</field>
+        <field name="model">search.customer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email" widget="email"/>
+                        <field name="phone" widget="phone"/>
+                    </group>
+                </sheet>
+                 <footer>
+                     <button name="sale_order_submit_button" string="confirm" type="object"
+                     class="oe_highlight"/>
+                    <button special="cancel" string="Cancel" class="btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="search_customer_action" model="ir.actions.act_window">
+        <field name="name">Search Customer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">search.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
